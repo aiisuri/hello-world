@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+h1 {
+  font-size:20px;
+  margin-bottom: 0;
+  color: grey;
+  text-align:center;
+  
+}
+
+@media (max-width:460px) {
+  h1 {
+    font-size:16px;
+    font-family: 'Playfair Display', serif;
+    color: grey;
+    text-align:center;
+    
+  }
+}
+
+p {
+  font-size:16px;
+  font-family: 'Roboto', sans-serif;
+  color: grey;
+  text-align:center;
+}
+
+a {font-size:12px;
+  font-family: 'Roboto', sans-serif;
+  color:#B5E3FF;
+}
+a:visited {color:#E8B4A9;
+font-size:12px;
+  font-family: 'Roboto', sans-serif;}
+
+#main {
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+  border-radius: 0px;
+  background: #FFD9D4;
+  text-align:center;
+  
+  
+}
+
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap" rel="stylesheet">
+<html>
+  <main id="main">
+    <h1 id="title">Pastel De Nata</h1>
+    <p>Pocketful of Joy</p>
+    <figure id="img-div">
+      <img id= "image"
+           src="https://www.foodrepublic.com/wp-content/uploads/2016/09/bicapasteis.jpg" width="450"
+           alt="Freshly baked Pastel De Natas"
+           />
+      <figcaption id="img-caption">
+        Freshly baked Pastel de Natas
+      </figcaption>
+    </figure>
+  <section id="tribute-info">
+    <p>pastel de nata is simply delicioius</p>
+    <p>A gentle heat caressing your lips with a velvet custard centre and a warmth of cinnamon. A perfect bite. Possibly, the best dessert ever?</p>
+ 
+
+<p>Named as one of the best 50 things to eat in the world according to The Guardian. Pastéis de Nata, also know as Portuguese custard tart, is an egg tart pastry dusted. Created by the Catholic monks and nuns of Saint Mary of Bethlehem, in Lisbon.</p>
+
+<p>The tarts are made from the discarded egg yolks since the egg whites were used for starching their fairs and habits. From then on, baking and selling these tarts became a way of generating income for the monasteries.</p>
+
+
+  <a id="tribute-link"
+  href="https://leitesculinaria.com/7759/recipes-pasteis-de-nata.html"
+     target="_blank">how to make it!</a>
+    </section>
+  </main>
+</html>
+
+
+
