@@ -1,0 +1,360 @@
+<DOCTYPE! html>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet');
+
+:root {
+  --color-white:#F2EBDC;
+  --color-darkblue: #8C4C46;
+  --color-darkblue-alpha:#A65858;
+  --color-green: #06402A;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+ font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var( --color-white);
+  margin: 0;
+}
+
+/* mobile friendly alternative to using background-attachment: fixed */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-green);
+  background-image: 
+    url(https://cdn.discoversg.com/wp-content/2017/07/Backlane-coffee-header-image-1024x768.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+  
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+h1,
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+.header {
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.clue {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  color: #e4e4e4;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* form */
+
+form {
+  background: var(--color-darkblue-alpha);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 480px) {
+  form {
+    padding: 2.5rem;
+  }
+}
+
+.form-group {
+  margin: 0 auto 1.25rem auto;
+  padding: 0.25rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-green);
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
+<div class="container">
+  <header class="header">
+    <h1 id="title" class="text-center">Do you like coffee?</h1>
+    <p id="description" class="description text-center">
+      Thank you for taking the time to let us know if you like coffee, or not?
+    </p>
+  </header>
+  <form id="survey-form">
+    <div class="form-group">
+      <label id="name-label" for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control"
+        placeholder="Enter your name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label id="email-label" for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="form-control"
+        placeholder="Enter your Email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label id="number-label" for="number"
+        >Age<span class="clue">(optional)</span></label
+      >
+      <input
+        type="number"
+        name="age"
+        id="number"
+        min="10"
+        max="99"
+        class="form-control"
+        placeholder="Age"
+      />
+    </div>
+    <div class="form-group">
+      <p>Who are YOU?! Who do you work for?!</p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>I am a...</option>
+        <option value="student">Student</option>
+        <option value="job">Full Time Jober</option>
+        <option value="learner">Full Time Learner</option>
+        <option value="preferNo">Shhhh...I can't say</option>
+        <option value="other">None of these, as I am an alien</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p>Would you buy a cup of coffee for a friend?</p>
+      <label>
+        <input
+          name="user-recommend"
+          value="definitely"
+          type="radio"
+          class="input-radio"
+          checked
+        />I already buy them coffees</label
+      >
+      <label>
+        <input
+          name="user-recommend"
+          value="maybe"
+          type="radio"
+          class="input-radio"
+        />Only if they're nice to me</label
+      >
+
+      <label
+        ><input
+          name="user-recommend"
+          value="not-sure"
+          type="radio"
+          class="input-radio"
+        />Coffee only belongs to me!</label
+      >
+    </div>
+
+    <div class="form-group">
+      <p>
+        What do you love most about coffee?
+      </p>
+      <select id="most-like" name="mostLike" class="form-control" required>
+        <option disabled selected value>I love...</option>
+        <option value="smells">the  smell of it!</option>
+        <option value="tastes">the tastes, it's fantastic!</option>
+        <option value="colour">the brown colour!</option>
+        <option value="warmth">the warmth of it!</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p>
+        What would you like to see improved?
+        <span class="clue">(Check all that apply)</span>
+      </p>
+
+      <label
+        ><input
+          name="prefer"
+          value="cultivation-of-coffee"
+          type="checkbox"
+          class="input-checkbox"
+        />Cultivation of coffee</label
+      >
+      <label>
+        <input
+          name="prefer"
+          value="workers-rights"
+          type="checkbox"
+          class="input-checkbox"
+        />Worker's rights</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="variety-on-offer"
+          type="checkbox"
+          class="input-checkbox"
+        />Variety on offer</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="sustainability"
+          type="checkbox"
+          class="input-checkbox"
+        />Sustainablity</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="accessibility"
+          type="checkbox"
+          class="input-checkbox"
+        />Accessibility</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="customer-service"
+          type="checkbox"
+          class="input-checkbox"
+        />Customer Service</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="value of coffee"
+          type="checkbox"
+          class="input-checkbox"
+        />Value of Coffee</label
+      >
+ 
+
+    <div class="form-group">
+      <p>Still have something to add?</p>
+      <textarea
+        id="comments"
+        class="input-textarea"
+        name="comment"
+        placeholder="Yeah, I'm going to write it here...."
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" id="submit" class="submit-button">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+</html>
